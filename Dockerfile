@@ -1,7 +1,7 @@
 FROM hsmtkk/openssl:1.1.1g as builder
 
 RUN yum -y update \
- && yum -y install gcc make
+ && yum -y install gcc gcc-c++ make
 
 WORKDIR /usr/local/src
 
