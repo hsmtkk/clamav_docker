@@ -16,4 +16,4 @@ FROM hsmtkk/openssl:1.1.1g
 
 COPY --from=builder /usr/local /usr/local
 
-EXPOSE 1344
+EXPOSE 3310
