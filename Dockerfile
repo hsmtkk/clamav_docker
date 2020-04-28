@@ -1,7 +1,7 @@
 FROM hsmtkk/openssl:1.1.1g as builder
 
 RUN yum -y update \
- && yum -y install gcc gcc-c++ make
+ && yum -y install gcc gcc-c++ make zlib-devel
 
 WORKDIR /usr/local/src
 
