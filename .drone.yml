@@ -1,0 +1,15 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      username: hsmtkk
+      password:
+        from_secret: DOCKER_HUB_TOKEN
+      repo: hsmtkk/clamav_docker
+      tags:
+        - latest
+        - 0.102.2
