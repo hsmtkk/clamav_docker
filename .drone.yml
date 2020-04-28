@@ -9,7 +9,7 @@ steps:
       username: hsmtkk
       password:
         from_secret: DOCKER_HUB_TOKEN
-      repo: hsmtkk/clamav_docker
+      repo: hsmtkk/clamav
       tags:
         - latest
         - 0.102.2
