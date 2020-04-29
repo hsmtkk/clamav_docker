@@ -19,5 +19,3 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libcurl.* /usr/lib/x86_64-linux-gn
 
 RUN touch /usr/local/clamav/etc/clamd.conf && env LD_LIBRARY_PATH=/usr/local/openssl/lib /usr/local/clamav/sbin/clamd --version
 
-EXPOSE 3310
-
