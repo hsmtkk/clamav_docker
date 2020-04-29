@@ -17,5 +17,3 @@ FROM hsmtkk/openssl:1.1.1g
 COPY --from=builder /usr/local/clamav /usr/local/clamav
 
 RUN touch /usr/local/clamav/etc/clamd.conf && env LD_LIBRARY_PATH=/usr/local/openssl/lib /usr/local/clamav/sbin/clamd --version
-
-EXPOSE 3310
