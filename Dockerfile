@@ -15,7 +15,9 @@ RUN curl -L -O https://www.clamav.net/downloads/production/clamav-0.102.2.tar.gz
 FROM hsmtkk/openssl:1.1.1g
 
 COPY --from=builder /usr/local/clamav /usr/local/clamav
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libcurl.* /usr/lib/x86_64-linux-gnu/
 
 RUN touch /usr/local/clamav/etc/clamd.conf && env LD_LIBRARY_PATH=/usr/local/openssl/lib /usr/local/clamav/sbin/clamd --version
 
 EXPOSE 3310
+
