@@ -14,6 +14,9 @@ RUN curl -L -O https://www.clamav.net/downloads/production/clamav-0.102.2.tar.gz
 
 FROM hsmtkk/openssl:1.1.1g
 
+RUN apt -y update \
+ && apt -y install ca-certificates
+
 COPY --from=builder /usr/local/clamav /usr/local/clamav
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libcurl.* /usr/lib/x86_64-linux-gnu/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libnghttp2.* /usr/lib/x86_64-linux-gnu/
