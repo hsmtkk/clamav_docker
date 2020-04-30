@@ -24,6 +24,7 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libgssapi_krb5.* /usr/lib/x86_64-l
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libldap_r-2.4.* /usr/lib/x86_64-linux-gnu/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/liblber-2.4.* /usr/lib/x86_64-linux-gnu/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libbrotlidec.* /usr/lib/x86_64-linux-gnu/
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libkrb5.* /usr/lib/x86_64-linux-gnu/
 
 RUN touch /usr/local/clamav/etc/clamd.conf && env LD_LIBRARY_PATH=/usr/local/openssl/lib /usr/local/clamav/sbin/clamd --version
 
