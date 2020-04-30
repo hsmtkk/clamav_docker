@@ -30,5 +30,6 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libkrb5support.* /usr/lib/x86_64-l
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libsasl2.* /usr/lib/x86_64-linux-gnu/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libgssapi.* /usr/lib/x86_64-linux-gnu/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libbrotlicommon.* /usr/lib/x86_64-linux-gnu/
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libkeyutils.* /usr/lib/x86_64-linux-gnu/
 
 RUN touch /usr/local/clamav/etc/clamd.conf && env LD_LIBRARY_PATH=/usr/local/openssl/lib /usr/local/clamav/sbin/clamd --version
