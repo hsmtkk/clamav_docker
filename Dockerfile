@@ -27,5 +27,6 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libbrotlidec.* /usr/lib/x86_64-lin
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libkrb5.* /usr/lib/x86_64-linux-gnu/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libk5crypto.* /usr/lib/x86_64-linux-gnu/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libkrb5support.* /usr/lib/x86_64-linux-gnu/
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libsasl2.* /usr/lib/x86_64-linux-gnu/
 
 RUN touch /usr/local/clamav/etc/clamd.conf && env LD_LIBRARY_PATH=/usr/local/openssl/lib /usr/local/clamav/sbin/clamd --version
